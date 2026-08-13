@@ -143,22 +143,15 @@ Is Qadar Ab Khumaar Ho Gaya`;
         
         const totalColors = 5;
 
-        // Ek naya function jo gaana aur lyrics dono start/restart karega
+        // Ek function jo music aur lyrics dono start/restart karega
         async function playSongAndLyrics() {
-            // Dono buttons ko hide kar do
+        
             playBtn.style.display = 'none'; 
             playAgainBtn.style.display = 'none'; 
-            
-            // Purane lyrics ko mita do (Reset)
             container.innerHTML = '';
-            
-            // Gaane ko ekdum zero second se shuru karo
             audio.currentTime = 0;
-            audio.play(); 
-            
+            audio.play();  
             let currentColorIndex = Math.floor(Math.random() * totalColors);
-            
-            // Lyrics typing loop
             for (let i = 0; i < lyricsText.length; i++) {
                 const char = lyricsText[i];
                 
@@ -173,7 +166,7 @@ Is Qadar Ab Khumaar Ho Gaya`;
                 await new Promise(resolve => setTimeout(resolve, 80));
             }
 
-            // Jab lyrics ka loop pura khatam ho jaye, tab "Play Again" button show karo
+            // Jab lyrics ka loop pura khatam ho jaye, tab "Play Again" button show hoga
             playAgainBtn.style.display = 'block';
         }
 
